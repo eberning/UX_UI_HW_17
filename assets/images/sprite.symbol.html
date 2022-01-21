@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+		<script src="https://rawgit.com/jonathantneal/svg4everybody/master/dist/svg4everybody.js"></script>
+		<script>svg4everybody();</script>
+		<title>SVG &lt;symbol&gt; sprite preview | svg-sprite</title>
+		<style>@charset "UTF-8";body{padding:0;margin:0;color:#666;background:#fafafa;font-family:Arial,Helvetica,sans-serif;font-size:1em;line-height:1.4}header{display:block;padding:3em 3em 2em 3em;background-color:#fff}header p{margin:2em 0 0 0}section{border-top:1px solid #eee;padding:2em 3em 0 3em}section ul{margin:0;padding:0}section li{display:inline;display:inline-block;background-color:#fff;position:relative;margin:0 2em 2em 0;vertical-align:top;border:1px solid #ccc;padding:1em 1em 3em 1em;cursor:default}.icon-box{margin:0;width:144px;height:144px;position:relative;background:#ccc url("data:image/gif;base64,R0lGODlhDAAMAIAAAMzMzP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQjk4OTI0MUY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQjk4OTI0MkY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNCOTg5MjNGRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNCOTg5MjQwRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAwADAAAAhaEH6mHmmzcgzJAUG/NVGrfOZ8YLlABADs=") top left repeat;border:1px solid #ccc;display:table-cell;vertical-align:middle;text-align:center}.icon{display:inline;display:inline-block}h1{margin-top:0}h2{margin:0;padding:0;font-size:1em;font-weight:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:absolute;left:1em;right:1em;bottom:1em}footer{display:block;margin:0;padding:0 3em 3em 3em}footer p{margin:0;font-size:.7em}footer a{color:#0f7595;margin-left:0}</style>
+		
+<!--
+	
+Sprite shape dimensions
+====================================================================================================
+You will need to set the sprite shape dimensions via CSS when you use them as inline SVG, otherwise
+they would become a huge 100% in size. You may use the following dimension classes for doing so.
+They might well be outsourced to an external stylesheet of course.
+
+-->
+
+<style type="text/css">
+	.svg-ico-copyright-dims { width: 32px; height: 33px; }
+	.svg-ico-linkedin-dims { width: 50px; height: 44px; }
+	.svg-ico-smile-dims { width: 116px; height: 111px; }
+</style>
+<!--
+====================================================================================================
+-->
+
+	</head>
+	<body>
+	
+<!--
+	
+Inline <symbol> SVG sprite
+====================================================================================================
+This is an inlined version of the generated SVG sprite. The single images may be <use>d everywhere
+below within this document. Please see
+
+	https://github.com/jkphl/svg-sprite/blob/master/docs/configuration.md#defs--symbol-mode
+
+for further details on how to create this embeddable sprite variant.
+
+-->
+
+<svg width="0" height="0" style="position:absolute">
+		<symbol fill="none" viewBox="0 0 32 33" id="ico-copyright" xmlns="http://www.w3.org/2000/svg"><path d="M16 0C7.178 0 0 7.402 0 16.5 0 25.598 7.178 33 16 33s16-7.402 16-16.5C32 7.402 24.822 0 16 0zm0 28.5c-6.416 0-11.636-5.383-11.636-12S9.584 4.5 16 4.5c6.416 0 11.636 5.383 11.636 12s-5.22 12-11.636 12zm4.323-9.26l2.359 2.26-1.19 1.072a7.994 7.994 0 01-5.354 2.084c-4.414 0-8.005-3.627-8.005-8.085 0-4.447 3.591-8.065 8.005-8.065a7.96 7.96 0 015.337 2.064l1.145 1.034-2.26 2.333-1.005-.915c-.863-.787-2.006-1.22-3.217-1.22-2.651 0-4.808 2.14-4.808 4.77 0 2.64 2.157 4.787 4.808 4.787 1.198 0 2.34-.44 3.217-1.239l.968-.88z" fill="#fff"/></symbol>
+		<symbol fill="none" viewBox="0 0 50 44" id="ico-linkedin" xmlns="http://www.w3.org/2000/svg"><path d="M37.43 0h-24.9C5.63 0 0 4.959 0 11.035V33c0 6.041 5.63 11 12.53 11h24.94C44.37 44 50 39.041 50 32.965v-21.93C49.96 4.959 44.33 0 37.43 0zM16.655 35.619H9.516V17.46h7.138V35.62zm-3.609-20.952c-2.022 0-3.648-1.432-3.648-3.213 0-1.781 1.626-3.213 3.648-3.213 2.022 0 3.648 1.432 3.648 3.213-.04 1.78-1.665 3.213-3.648 3.213zm27.439 20.952h-5.988v-8.8c0-2.13-.317-4.854-3.608-4.854-3.37 0-3.925 2.305-3.925 4.714v8.94h-5.948V17.46h5.551v2.445h.159c.872-1.397 2.894-2.48 6.066-2.48 6.543 0 7.693 3.318 7.693 8.242v9.952z" fill="currentColor"/></symbol>
+		<symbol fill="none" viewBox="0 0 116 111" id="ico-smile" xmlns="http://www.w3.org/2000/svg"><path d="M58 0C26.019 0 0 24.897 0 55.5S26.019 111 58 111s58-24.897 58-55.5S89.981 0 58 0zm0 100.909c-26.166 0-47.454-20.37-47.454-45.409 0-25.039 21.288-45.41 47.454-45.41s47.455 20.371 47.455 45.41c0 25.039-21.289 45.409-47.455 45.409z" fill="#fff"/><path d="M72.168 69.057c-7.813 7.475-20.523 7.476-28.336 0-2.059-1.97-5.397-1.97-7.456 0-2.06 1.97-2.06 5.165 0 7.136C42.338 81.899 50.166 84.75 58 84.75c7.83 0 15.664-2.853 21.625-8.557 2.06-1.97 2.06-5.165 0-7.135-2.06-1.971-5.398-1.97-7.457 0zM40.474 49.492c1.31-1.25 2.06-2.986 2.06-4.756 0-1.769-.75-3.505-2.06-4.756-1.308-1.251-3.122-1.97-4.971-1.97-1.853 0-3.663.719-4.97 1.97-1.312 1.252-2.06 2.987-2.06 4.756 0 1.77.748 3.505 2.06 4.757 1.307 1.254 3.121 1.97 4.97 1.97 1.849 0 3.663-.716 4.97-1.97zM80.497 38.01c-1.849 0-3.663.719-4.97 1.97-1.308 1.252-2.06 2.984-2.06 4.756 0 1.773.752 3.505 2.06 4.757 1.307 1.254 3.121 1.97 4.97 1.97 1.849 0 3.663-.716 4.97-1.97 1.308-1.252 2.06-2.984 2.06-4.757 0-1.769-.752-3.505-2.06-4.756-1.307-1.251-3.121-1.97-4.97-1.97z" fill="#fff"/></symbol>
+</svg>
+
+<!--
+====================================================================================================
+-->
+		
+		<header>
+			<h1>SVG <code>&lt;symbol&gt;</code> sprite preview</h1>
+			<p>This preview features two methods of using the generated sprite in conjunction with inline SVG. Please have a look at the HTML source for further details and be aware of the following constraints:</p>
+			<ul>
+				<li>Your browser has to <a href="http://caniuse.com/#feat=svg-html5" target="_blank">support inline SVG</a> for these techniques to work.</li>
+				<li>The embedded sprite (A) slightly differs from the generated external one. Please <a href="https://github.com/jkphl/svg-sprite/blob/master/docs/configuration.md#defs--symbol-mode" target="_blank">see the documentation</a> for details on how to create such an embeddable sprite.</li>
+				<li>Internet Explorer up to version 11 doesn't support external sprites for use with inline SVG. For IE 9-11, you may polyfill this functionality with <a href="https://github.com/jonathantneal/svg4everybody" target="_blank">SVG for Everybody</a>.</li>
+			</ul>
+		</header>
+		<section>
+
+<!--
+	
+A) Inline SVG with embedded sprite
+====================================================================================================
+These SVG images make use of fragment identifiers (IDs) and are extracted out of the inline sprite
+embedded above. They may be styled via CSS.
+
+-->
+
+			<h3>A) Inline SVG with embedded sprite</h3>
+			<ul>
+
+				<li title="ico-copyright">
+					<div class="icon-box">
+						
+						<!-- ico-copyright -->
+						<svg class="svg-ico-copyright-dims">
+							<use xlink:href="#ico-copyright"></use>
+						</svg>
+						
+					</div>
+					<h2>ico-copyright</h2>
+				</li>
+				<li title="ico-linkedin">
+					<div class="icon-box">
+						
+						<!-- ico-linkedin -->
+						<svg class="svg-ico-linkedin-dims">
+							<use xlink:href="#ico-linkedin"></use>
+						</svg>
+						
+					</div>
+					<h2>ico-linkedin</h2>
+				</li>
+				<li title="ico-smile">
+					<div class="icon-box">
+						
+						<!-- ico-smile -->
+						<svg class="svg-ico-smile-dims">
+							<use xlink:href="#ico-smile"></use>
+						</svg>
+						
+					</div>
+					<h2>ico-smile</h2>
+				</li>
+			</ul>
+
+<!--
+====================================================================================================
+-->
+
+		</section>
+		<section>
+
+<!--
+	
+B) Inline SVG with external sprite (IE 9-11 with polyfill only)
+====================================================================================================
+These SVG images make use of an URL + fragment identifiers (IDs) and refer to the regular external
+SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
+
+-->
+
+			<h3>B) Inline SVG with external sprite (IE 9-11 with polyfill only)</h3>
+			<p>Please set the <code>inline</code> option to <code>FALSE</code> in order to preview this method.</p>
+
+<!--
+====================================================================================================
+-->
+
+		</section>
+		<footer>
+			<p>Generated at Thu, 20 Jan 2022 14:59:17 GMT by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
+		</footer>
+	</body>
+</html>
